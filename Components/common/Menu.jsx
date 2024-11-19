@@ -1,18 +1,22 @@
-import React from "react";
+
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
-import {Logo} from "../../src/assets/rdlogo.png";
+import Logo from "../../src/assets/rdlogo1.png";
+import { useState } from "react";
 
 const Menu = () => {
+  const [expanded, setExpanded] = useState(false);
 
+  const handleToggle = () => setExpanded(!expanded);
+  const closeNavbar = () => setExpanded(false);
   return (
-    <Navbar expand="lg" className="nav" variant="light">
+    <Navbar expanded={expanded} onToggle={handleToggle} expand="lg" className="nav" variant="ligth">
       <Container>
         <Navbar.Brand as={Link} to={"/"}>
           <div>
-            <img src={Logo} alt="rocio diseños logo" className="logo" />
+            <img src={Logo} alt="rocio diseños logo" className="logo img-fluid" />
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
