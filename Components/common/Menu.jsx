@@ -12,12 +12,12 @@ const Menu = () => {
   const handleToggle = () => setExpanded(!expanded);
   const closeNavbar = () => setExpanded(false);
   return (
-    <Navbar expanded={expanded} onToggle={handleToggle} expand="lg" className="nav" variant="ligth">
-      <Container>
-        <Navbar.Brand as={Link} to={"/"}>
-          <div>
-            <img src={Logo} alt="rocio diseños logo" className="logo img-fluid" />
-          </div>
+    <Navbar expanded={expanded} onToggle={handleToggle} expand="lg" className="nav p-0 m-0" variant="ligth">
+      <Container className="m-0">
+        <Navbar.Brand as={Link} to={"/"} className="p-0 ">
+         
+            <img src={Logo} alt="rocio diseños logo" className="logo img-fluid m-1" />
+          
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
